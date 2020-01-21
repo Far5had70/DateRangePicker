@@ -50,22 +50,27 @@ public class DatePickerFragment extends Fragment {
         adjustView();
 
         if (isSolarDate){
+            pdTo.setGrgDay(toDate.get(Calendar.DAY_OF_MONTH));
+            pdTo.setGrgMonth(toDate.get(Calendar.MONTH)+1);
+            pdTo.setGrgYear(toDate.get(Calendar.YEAR));
+
+            mDayTo = pdTo.getShDay();
+            mMonthTo = pdTo.getShMonth()-1;
+            mYearTo = pdTo.getShYear();
+
+            adjustYear(mYearTo);
+            adjustMonth(mMonthTo);
+            adjustDay(mDayTo);
+
+        }else {
 
             mDayTo = toDate.get(Calendar.DAY_OF_MONTH);
             mMonthTo = toDate.get(Calendar.MONTH);
             mYearTo = toDate.get(Calendar.YEAR);
 
-            pdTo.setGrgDay(mDayTo);
-            pdTo.setGrgMonth(mMonthTo+1);
-            pdTo.setGrgYear(mYearTo);
-
-            adjustYear(pdTo.getShYear());
-            adjustMonth(pdTo.getShMonth()-1);
-            adjustDay(pdTo.getShDay());
-        }else {
-            adjustYear(toDate.get(Calendar.YEAR));
-            adjustMonth(toDate.get(Calendar.MONTH));
-            adjustDay(toDate.get(Calendar.DAY_OF_MONTH));
+            adjustYear(mYearTo);
+            adjustMonth(mMonthTo);
+            adjustDay(mYearTo);
         }
     }
 
@@ -90,7 +95,7 @@ public class DatePickerFragment extends Fragment {
                     mDayTo = Integer.parseInt(stringList.get(option));
                 }else {
                     mDayTo = Integer.parseInt(stringList.get(option));
-                    toDate.set(toDate.get(Calendar.YEAR) , toDate.get(Calendar.MONTH) , mDayTo);
+                    toDate.set(mYearTo , mMonthTo-1, mDayTo);
                 }
             }
         });
@@ -105,11 +110,12 @@ public class DatePickerFragment extends Fragment {
             public void onOptionChanged(WheelPickerView view, int option) {
                 if (isSolarDate){
                     mMonthTo = option+1;
+                    pdTo.setShMonth(mMonthTo);
                 }else {
                     mMonthTo = option+1;
-                    toDate.set(toDate.get(Calendar.YEAR) , mMonthTo, toDate.get(Calendar.DAY_OF_WEEK));
+                    toDate.set(mYearTo , option, mDayTo);
                 }
-                adjustDay(mMonthTo);
+                adjustDay(mDayTo);
             }
         });
     }
@@ -131,11 +137,12 @@ public class DatePickerFragment extends Fragment {
             public void onOptionChanged(WheelPickerView view, int option) {
                 if (isSolarDate){
                     mYearTo = Integer.valueOf(strings.get(option));
+                    pdTo.setShYear(mYearTo);
                 }else {
                     mYearTo = Integer.valueOf(strings.get(option));
-                    toDate.set(mYearTo , toDate.get(Calendar.MONTH), toDate.get(Calendar.DAY_OF_MONTH));
+                    toDate.set(mYearTo , mMonthTo-1, mDayTo);
                 }
-                adjustMonth(mYearTo);
+                adjustDay(mDayTo);
             }
         });
     }
@@ -155,7 +162,7 @@ public class DatePickerFragment extends Fragment {
         }
 
         if (WheelTextSize != -1) {
-            int pixel= (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, DateRangePicker.WheelTextSize, getResources().getDisplayMetrics());
+            int pixel= (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, WheelTextSize, getResources().getDisplayMetrics());
             dayWP.setTextSize(pixel);
             monthWP.setTextSize(pixel);
             yearWP.setTextSize(pixel);
