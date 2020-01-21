@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/root"
+    tools:context=".DateRangePicker"
+    tools:background="@color/green">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:id="@+id/tabLayout"
+            android:background="@color/green"
+            app:tabPaddingStart="110dp"
+            app:tabPaddingEnd="110dp"
+            app:tabTextColor="@color/white"
+            app:tabIndicatorColor="@color/white"
+            app:tabSelectedTextColor="@color/white"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:id="@+id/viewPager"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.0001dp"
+            tools:background="@color/green"
+            android:id="@+id/lineView"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/negativeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textColor="@color/white"
+                android:theme="@style/Theme.MaterialComponents.Bridge"
+                app:backgroundTint="@color/green"
+                app:icon="@drawable/ic_mult"
+                app:layout_anchorGravity="center_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/positiveBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textAllCaps="false"
+                tools:text="انصراف"
+                app:iconSize="20dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/positiveBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textColor="@color/white"
+                android:theme="@style/Theme.MaterialComponents.Bridge"
+                app:backgroundTint="@color/green"
+                app:icon="@drawable/ic_tick"
+                app:layout_anchorGravity="center_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textAllCaps="false"
+                tools:text="تایید"
+                app:iconSize="20dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
