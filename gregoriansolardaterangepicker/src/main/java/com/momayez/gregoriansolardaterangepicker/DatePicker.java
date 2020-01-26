@@ -123,6 +123,11 @@ public class DatePicker extends DialogFragment implements View.OnClickListener {
             positiveBtn.setTextSize(TextSize);
             negativeBtn.setTextSize(TextSize);
         }
+
+        if (backgroundColor != -1) {
+            positiveBtn.setBackgroundColor(backgroundColor);
+            negativeBtn.setBackgroundColor(backgroundColor);
+        }
     }
 
     private void setupTab() {
