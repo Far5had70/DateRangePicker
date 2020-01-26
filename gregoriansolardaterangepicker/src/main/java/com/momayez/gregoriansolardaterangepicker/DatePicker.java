@@ -92,6 +92,8 @@ public class DatePicker extends DialogFragment implements View.OnClickListener {
         if (ButtonTextColor != -1) {
             positiveBtn.setTextColor(ButtonTextColor);
             negativeBtn.setTextColor(ButtonTextColor);
+            positiveBtn.setIconTintResource(R.color.white);
+            negativeBtn.setIconTintResource(R.color.white);
         }
 
         if (typeface != null) {
