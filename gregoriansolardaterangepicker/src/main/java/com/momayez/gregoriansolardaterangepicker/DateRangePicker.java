@@ -132,6 +132,11 @@ public class DateRangePicker extends DialogFragment implements View.OnClickListe
             positiveBtn.setTextSize(TextSize);
             negativeBtn.setTextSize(TextSize);
         }
+
+        if (backgroundColor != -1) {
+            positiveBtn.setBackgroundColor(backgroundColor);
+            negativeBtn.setBackgroundColor(backgroundColor);
+        }
     }
 
     private void setupTab() {
