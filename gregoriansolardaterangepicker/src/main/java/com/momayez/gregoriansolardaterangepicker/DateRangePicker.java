@@ -101,6 +101,8 @@ public class DateRangePicker extends DialogFragment implements View.OnClickListe
         if (ButtonTextColor != -1) {
             positiveBtn.setTextColor(ButtonTextColor);
             negativeBtn.setTextColor(ButtonTextColor);
+            positiveBtn.setIconTintResource(ButtonTextColor);
+            negativeBtn.setIconTintResource(ButtonTextColor);
         }
 
         if (typeface != null) {
