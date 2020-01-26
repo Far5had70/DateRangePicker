@@ -10,6 +10,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.momayez.gregoriansolardaterangepicker.DatePicker;
 import com.momayez.gregoriansolardaterangepicker.DateRangePicker;
 
 import java.util.List;
@@ -124,13 +125,12 @@ public class LoopView extends View {
         if (DateRangePicker.typeface != null){
             paintA.setTypeface(DateRangePicker.typeface);
             paintB.setTypeface(DateRangePicker.typeface);
-//            paintC.setTypeface(typeface);
         }
-//        if (PersianDatePicker.typeface != null){
-//            paintA.setTypeface(PersianDatePicker.typeface);
-//            paintB.setTypeface(PersianDatePicker.typeface);
-////            paintC.setTypeface(typeface);
-//        }
+        if (DatePicker.typeface != null){
+            paintA.setTypeface(DatePicker.typeface);
+            paintB.setTypeface(DatePicker.typeface);
+        }
+
         paintB.setTextSize(textSize);
         paintC = new Paint();
         paintC.setColor(colorGrayLight);

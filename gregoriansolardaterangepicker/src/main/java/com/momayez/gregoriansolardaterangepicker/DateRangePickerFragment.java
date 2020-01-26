@@ -98,7 +98,7 @@ public class DateRangePickerFragment extends Fragment {
             }else if (sourcePosition == 0){
                 adjustYear(mYearTo);
                 adjustMonth(mMonthTo);
-                adjustDay(mYearTo);
+                adjustDay(mDayTo);
             }
         }
     }

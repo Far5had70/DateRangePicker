@@ -70,7 +70,7 @@ public class DatePickerFragment extends Fragment {
 
             adjustYear(mYearTo);
             adjustMonth(mMonthTo);
-            adjustDay(mYearTo);
+            adjustDay(mDayTo);
         }
     }
 
