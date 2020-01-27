@@ -51,13 +51,13 @@
                 android:textColor="@color/white"
                 android:theme="@style/Theme.MaterialComponents.Bridge"
                 app:backgroundTint="@color/green"
-                app:icon="@drawable/ic_mult"
                 app:layout_anchorGravity="center_horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/positiveBtn"
                 app:layout_constraintTop_toTopOf="parent"
                 app:textAllCaps="false"
                 tools:text="انصراف"
+                app:iconTint="@null"
                 app:iconSize="20dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -71,13 +71,13 @@
                 android:textColor="@color/white"
                 android:theme="@style/Theme.MaterialComponents.Bridge"
                 app:backgroundTint="@color/green"
-                app:icon="@drawable/ic_tick"
                 app:layout_anchorGravity="center_horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:textAllCaps="false"
                 tools:text="تایید"
+                app:iconTint="@null"
                 app:iconSize="20dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

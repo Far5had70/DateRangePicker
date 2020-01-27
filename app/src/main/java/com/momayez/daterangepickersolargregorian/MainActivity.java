@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setPositiveText("تائید")
                 .setNegativeText("انصراف")
                 .setTabText("تاریخ")
-                .setPositiveDrawable(getResources().getDrawable(R.drawable.ic_tick))
-                .setNegativeDeawable(getResources().getDrawable(R.drawable.ic_mult))
+//                .setPositiveDrawable(getResources().getDrawable(R.drawable.ic_tick))
+//                .setNegativeDeawable(getResources().getDrawable(R.drawable.ic_mult))
                 .setCurrentItem(1)
                 .setOnChooseListener(new OnChooseListener() {
                     @Override
@@ -98,8 +98,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setNegativeText("Cancel")
                 .setFromDateText("From Date")
                 .setToDateText("To Date")
-                .setPositiveDrawable(getResources().getDrawable(R.drawable.ic_tick))
-                .setNegativeDeawable(getResources().getDrawable(R.drawable.ic_mult))
+//                .setPositiveDrawable(getResources().getDrawable(R.drawable.ic_tick))
+//                .setNegativeDeawable(getResources().getDrawable(R.drawable.ic_mult))
                 .setCurrentItem(1)
                 .setOnChooseListener(new OnChoose() {
                     @Override
