@@ -193,6 +193,7 @@ public class DatePicker extends DialogFragment implements View.OnClickListener {
 
             onChoose.date(toCalendar , isSolarDate , mYearTo , mMonthTo , mDayTo , DateUtil.convertIntToShamsiDate(mDayTo , mMonthTo , mYearTo));
         }
+        dismiss();
     }
 
     private void negativeClick() {
