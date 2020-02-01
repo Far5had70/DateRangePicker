@@ -57,6 +57,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:textAllCaps="false"
                 tools:text="انصراف"
+                app:iconTint="@null"
                 app:iconSize="20dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -76,6 +77,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:textAllCaps="false"
                 tools:text="تایید"
+                app:iconTint="@null"
                 app:iconSize="20dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
