@@ -264,6 +264,7 @@ public class DateRangePicker extends DialogFragment implements View.OnClickListe
             onChoose.fromDate(fromCalendar , isSolarDate , mYearFrom , mMonthFrom , mDayFrom , DateUtil.convertIntToShamsiDate(mDayFrom , mMonthFrom , mYearFrom));
             onChoose.toDate(toCalendar , isSolarDate , mYearTo , mMonthTo , mDayTo , DateUtil.convertIntToShamsiDate(mDayTo , mMonthTo , mYearTo));
         }
+        dismiss();
     }
 
     private void negativeClick() {

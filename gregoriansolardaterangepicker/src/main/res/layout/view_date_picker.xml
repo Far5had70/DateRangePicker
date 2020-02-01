@@ -17,6 +17,7 @@
         <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
+            android:layoutDirection="ltr"
             android:id="@+id/tabLayout"
             android:background="@color/green"
             app:tabPaddingStart="110dp"
@@ -28,6 +29,7 @@
         <androidx.viewpager.widget.ViewPager
             android:layout_width="wrap_content"
             android:layout_height="200dp"
+            android:layoutDirection="ltr"
             android:id="@+id/viewPager"/>
 
         <FrameLayout
