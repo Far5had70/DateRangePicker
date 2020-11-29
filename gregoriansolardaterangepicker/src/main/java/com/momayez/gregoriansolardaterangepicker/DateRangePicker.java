@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -207,20 +208,24 @@ public class DateRangePicker extends DialogFragment implements View.OnClickListe
     @Override
     public void onResume() {
         super.onResume();
-        ViewGroup.LayoutParams params = getDialog().getWindow().getAttributes();
-        params.width = WindowManager.LayoutParams.MATCH_PARENT - 1;
-        params.height = WindowManager.LayoutParams.WRAP_CONTENT;
-        getDialog().getWindow().setAttributes((android.view.WindowManager.LayoutParams) params);
-        GradientDrawable bgShape = new GradientDrawable();
-        bgShape.setCornerRadius(CornerRadius);
-        if (backgroundColor != -1) {
-            bgShape.setColor(backgroundColor);
-        } else {
-            bgShape.setColor(getResources().getColor(R.color.white));
-        }
-        root.setBackground(bgShape);
-        tabLayout.setBackground(bgShape);
-
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                ViewGroup.LayoutParams params = getDialog().getWindow().getAttributes();
+                params.width = WindowManager.LayoutParams.MATCH_PARENT - 1;
+                params.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                getDialog().getWindow().setAttributes((android.view.WindowManager.LayoutParams) params);
+                GradientDrawable bgShape = new GradientDrawable();
+                bgShape.setCornerRadius(CornerRadius);
+                if (backgroundColor != -1) {
+                    bgShape.setColor(backgroundColor);
+                } else {
+                    bgShape.setColor(getResources().getColor(R.color.white));
+                }
+                root.setBackground(bgShape);
+                tabLayout.setBackground(bgShape);
+            }
+        } , 200);
     }
 
     @Override
